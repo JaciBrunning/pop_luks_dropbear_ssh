@@ -50,7 +50,7 @@ To access the machine over SSH, it needs to have an IP address before entering u
 ```
 $ kernelstub -a "ip=<ip addr>::<gateway ip>:<netmask>:<hostname>:<interface>"
 # Or, if you're using VLANs
-$ kernelstub -a "vlan=<interface>.<tag>:<interface>     # e.g. eth0.10=eth0 for VLAN ID 10 on eth0
+$ kernelstub -a "vlan=<interface>.<tag>:<interface>"     # e.g. eth0.10=eth0 for VLAN ID 10 on eth0
 $ kernelstub -a "ip=<ip addr>::<gateway ip>:<netmask>:<hostname>:<interface>.<tag>"
 ```
 
