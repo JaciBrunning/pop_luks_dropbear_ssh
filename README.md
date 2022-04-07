@@ -19,6 +19,7 @@ apt install dropbear-initramfs
 
 ## Configuring Dropbear
 Now you can configure dropbear by editing `/etc/dropbear-initramfs/config` as root:
+
 `/etc/dropbear-initramfs/config`
 ```
 # ...
@@ -35,6 +36,7 @@ These are the options that I use and recommend. You can find them for yourself b
 Now you can specify what machines can SSH in using key-based auth. These are the public keys of your clients, stored in `~/.ssh/id_rsa.pub`. Place one-per-line in `/etc/dropbear-initramfs/authorized_keys`.
 
 I add some extra options, which you can find below.
+
 `/etc/dropbear-initramfs/authorized_keys`
 ```
 no-port-forwarding,no-agent-forwarding,no-x11-forwarding,command="/bin/cryptroot-unlock" ssh-rsa ...
