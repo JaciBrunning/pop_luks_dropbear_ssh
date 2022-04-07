@@ -50,7 +50,7 @@ To access the machine over SSH, it needs to have an IP address before entering u
 ```
 $ kernelstub -a "ip=<ip addr>::<gateway ip>:<netmask>:<hostname>:<interface>"
 # Or, if you're using VLANs
-$ kernelstub -a "vlan=<interface>.<tag>:<interface>"     # e.g. eth0.10=eth0 for VLAN ID 10 on eth0
+$ kernelstub -a "vlan=<interface>.<tag>:<interface>"     # e.g. eth0.10:eth0 for VLAN ID 10 on eth0
 $ kernelstub -a "ip=<ip addr>::<gateway ip>:<netmask>:<hostname>:<interface>.<tag>"
 ```
 
@@ -81,6 +81,8 @@ $ chown root:root /etc/initramfs-tools/scripts/init-bottom/netplan-revert.sh
 $ chmod +x /etc/initramfs-tools/scripts/init-bottom/netplan-revert.sh
 $ update-initramfs -u
 ```
+
+Now, your system will use the IP configuration in userspace.
 
 ### And you're done!
 You can SSH into your system with `ssh -p 2222 root@<ip>`, which should drop you straight to a password prompt. Put in your LUKS password, and the SSH session will terminate while your system unlocks. SSH to your regular user (`ssh jaci@<ip>`) and you should be all set!
